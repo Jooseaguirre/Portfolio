@@ -83,7 +83,22 @@
       margin-bottom:10px;
     }
 
-    /* Foto redonda */
+
+      .about {
+    margin-bottom: 40px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  .about-content p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #444;
+  }
+
+    
     .profile-pic {
       width: 140px;
       height: 140px;
@@ -226,7 +241,7 @@
       transform: rotate(20deg) scale(1.2);
     }
 
-    /* Botón CV */
+    
     .download-cv{
       display: inline-flex;
       align-items: center;
@@ -282,7 +297,7 @@
       box-shadow: 0 8px 25px rgba(0, 198, 255, 0.5);
     }
 
-    /* Formulario contacto */
+   
     .contact-form {
       margin-top: 30px;
       background: rgba(255, 255, 255, 0.15);
@@ -344,7 +359,7 @@
     }
     .icono{ width:20px; height:20px; }
 
-    /* Responsive */
+    
     @media (min-width: 600px) {
       .projects{
         display:grid;
@@ -376,9 +391,27 @@
   <div class="container">
     <section class="hero">
       <img src="images/joseperfil.png" alt="José Aguirre" class="profile-pic">
-      <h1>¡Hola! Soy José</h1>
-      <p>Estudiante de la Universidad Tecnologica Nacional y apasionado por la programacion.</p>
+      <h1>Hola, soy José 🍀</h1>
+      <p>Estudiante de programación | Apasionado por la programación y el diseño web.</p>
     </section>
+    
+    <section id="sobre-mi" class="about">
+  <h2 class="section-title">Sobre mí</h2>
+  <div class="about-content">
+    <p>
+      Soy estudiante de programación con muchas ganas de seguir aprendiendo 
+      y mejorar día a día. Me interesa el desarrollo de <strong>diseño web</strong>, 
+      
+    </p>
+    <p>Realicé cursos de HTML, CSS Y JAVASCRIPT</p>
+    <p>
+      Me gusta trabajar en proyectos desafiantes, aprender nuevas tecnologías 
+      y aportar valor en equipo. 🚀
+    </p>
+  </div>
+</section>
+
+
 
     <section id="proyectos" class="projects">
       <h2 class="section-title">Proyectos</h2>
@@ -397,7 +430,9 @@
           <img src="images/dotnet-logo.png" alt="Vista previa del proyecto">
         </div>
         <h3>Proyecto 2</h3>
-        <p>Proyecto en C# .NET </p>    
+        <p>Proyecto en C# .NET </p>  
+        <br>
+        <br>  
         <a href="https://github.com/Jooseaguirre/tp-winform-equipo-8b" target="_blank">
           <img src="images/github.webp" alt="GitHub" class="icono"> Ver en GitHub
         </a>
@@ -410,6 +445,7 @@
         <li data-skill="c++"><img src="images/c++.png" alt="C++" class="icono"> C++ (manejo de clases, archivos)</li>
         <li data-skill="htmlcss"><img src="images/htmlcss.png" alt="HTML" class="icono">  HTML y CSS</li>
         <li data-skill="sql"><img src="images/sql.png" alt="SQL Server" class="icono"> SQL Server (consultas y modelado básico)</li>
+        <li data-skill="sql"><img src="images/javascript.webp" alt="javascript" class="icono"> Javascript</li>
       </ul>
     </section>
 
