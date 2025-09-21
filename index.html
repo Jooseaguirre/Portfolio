@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+  <title>Portfolio - José Aguirre</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background: #f8f9fa;
+      color:#333;
+    }
+    header{
+      background:#333;
+      color:#fff;
+      padding:15px;
+      text-align:center;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+  
+    
+    nav{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap: 25px;
+    }
+    nav a{
+     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1); /* leve transparencia */
+    margin:5px 10px;
+    }
+    nav a:hover{
+      text-decoration:underline;
+     background: white;
+    color: #21686d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    }
+
+    .logo {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(270deg, #00c6ff, #0072ff, #00c6ff);
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s ease infinite;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    }
+
+        @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+    }
+
+    .container{
+      max-width:900px;
+      margin:20px auto;
+      padding:0 15px;
+    }
+    .hero{
+     text-align:center;
+     margin-bottom:40px;
+     padding:0 10px;
+     background: linear-gradient(135deg, #21686d, #33b2b8);
+     color: white;
+     padding: 40px 20px;
+        border-radius: 8px;
+    }
+    .hero h1{
+      margin-bottom:10px;
+    }
+    .projects {
+  margin-bottom: 40px;
+}
+
+    .project {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+     box-shadow: 0 12px 30px rgba(0, 198, 255, 0.3);;
+    }
+
+    .project h3 {
+    margin-top: 10px;
+    color: #21686d;
+    font-weight: bold;
+    }
+
+    .project-preview {
+    background: #ddd;
+    height: 150px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    overflow: hidden;
+    }
+
+    .project-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+    }
+
+    .project-preview img:hover {
+    transform: scale(1.1); 
+    }
+
+    .project a {
+    margin-top: 12px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    }
+
+    .project a:hover {
+    color: #00c6ff;
+    
+    }
+    .skills{
+      margin-bottom:40px;
+    }
+    .skills ul{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      list-style:none;
+      padding:0;
+    }
+    .skills li{
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    }
+
+    .skills li img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  transition: transform 0.4s ease;
+}
+
+.skills li {
+  transition: all 0.4s ease;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+
+.skills li:hover {
+  transform: translateY(-10px) scale(1.05);
+  border: 2px solid #00c6ff;
+  box-shadow: 0 10px 25px rgba(0, 198, 255, 0.4);
+  background: rgba(0, 198, 255, 0.1);
+}
+
+.skills li:hover img {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.skills li[data-skill="c++"] {
+  border-color: #00599C;
+}
+.skills li[data-skill="c++"]:hover {
+  background: rgba(0, 89, 156, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 89, 156, 0.4);
+}
+
+.skills li[data-skill="htmlcss"] {
+  border-color: #e44d26;
+}
+.skills li[data-skill="htmlcss"]:hover {
+  background: rgba(228, 77, 38, 0.15);
+  box-shadow: 0 10px 25px rgba(228, 77, 38, 0.4);
+}
+
+.skills li[data-skill="sql"] {
+  border-color: #6c2eb9;
+}
+.skills li[data-skill="sql"]:hover {
+  background: rgba(108, 46, 185, 0.15);
+  box-shadow: 0 10px 25px rgba(108, 46, 185, 0.4);
+}
+
+  .contacts {
+  margin-bottom: 40px;
+}
+
+.contacts ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.contacts li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.contacts li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  text-decoration: none;
+  word-wrap: break-word;
+  transition: all 0.3s ease;
+}
+
+.contacts li a:hover {
+  background: #00c6ff;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.5);
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+
+.contacts li a img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.contacts li a:hover img {
+  transform: rotate(20deg) scale(1.2);
+}
+    .download-cv{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #00c6ff, #21686d);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 198, 255, 0.4);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    }
+    .download-cv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.3);
+    transform: skewX(-30deg);
+    transition: 0.5s;
+    }
+
+    .download-cv:hover::before {
+    left: 100%;
+    }
+
+
+    .download-cv:hover{
+     transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.6);
+    }
+    html {
+    scroll-behavior: smooth;
+    }
+
+
+    .section-title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 50px 0 30px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00c6ff, #21686d);
+    color: #fff;
+    letter-spacing: 2px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .section-title:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 198, 255, 0.5);
+    }
+
+   
+
+    @keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+
+    footer{
+      text-align:center;
+      padding:15px;
+      background:#2b2c2c;
+      color:#fff;
+      margin-top:40px;
+    }
+    .icono{
+      width:20px;
+      height:20px;
+    }
+    /* Responsive */
+    @media (min-width: 600px) {
+      .projects{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+      }
+      .skills ul{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+      }
+    }
+    @media (min-width: 900px) {
+      .projects{
+        grid-template-columns:repeat(3,1fr);
+      }
+      .skills ul{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2 class="logo">José Aguirre</h2>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+      
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <h1>¡Hola! Soy José</h1>
+      <p>Estudiante de la Universidad Tecnologica Nacional y apasionado por la programacion.</p>
+    </section>
+
+    <section id="proyectos" class="projects">
+      <h2 class="section-title">Proyectos</h2>
+     <div class="project">
+     <div class="project-preview">
+         <img src="images/c++.png" alt="Vista previa del proyecto">
+     </div>
+        <h3>Aplicacion Musical</h3>
+         <p>Trabajo práctico que hice en la facultad usando C++ y manejo de archivos binarios.</p>
+        <a href="https://github.com/Jooseaguirre/App-music" target="_blank">
+         <img src="images/github.webp" alt="GitHub" class="icono"> Ver en GitHub
+  </a>
+</div>
+      <div class="project">
+        <div class="project-preview">
+         <img src="images/dotnet-logo.png" alt="Vista previa del proyecto" >
+      </div>
+        <h3>Proyecto 2</h3>
+        <br>
+        
+        <p>Proyecto en C# .NET </p>    
+        <a href="https://github.com/Jooseaguirre/tp-winform-equipo-8b" target="_blank">
+          <img src="images/github.webp" alt="GitHub" class="icono"> Ver en GitHub
+          
+        </a>
+      </div>
+    </section>
+
+    <section id="habilidades" class="skills">
+      <h2 class="section-title">Habilidades</h2>
+      <ul>
+        <li data-skill="c++"><img src="images/c++.png" alt="C++" class="icono"> C++ (manejo de clases, archivos)</li>
+        <li data-skill="htmlcss"><img src="images/htmlcss.png" alt="HTML" class="icono">  HTML y CSS</li>
+        <li data-skill="sql"><img src="images/sql.png" alt="SQL Server" class="icono"> SQL Server (consultas y modelado básico)</li>
+      </ul>
+    </section>
+
+    <section id="contacto" class="contacts">
+      <h2 class="section-title">Contacto</h2>
+      <ul>
+        <li><a href="https://github.com/Jooseaguirre" target="_blank"><img src="images/github.webp" alt="GitHub" class="icono"> GitHub</a></li>
+        <li><a href="mailto:jooseaguirre08@gmail.com"><img src="images/email.jpg" alt="Email" class="icono"> jooseaguirre08@gmail.com</a></li>
+        </li>
+      </ul>
+      <a class="download-cv" href="cv/CV_Jose_Aguirre_A.docx" download>
+        <img src="images/download.png" alt="CV" class="icono"> Descargar CV
+      </a>
+    </section>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> José Aguirre - Portfolio</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
